@@ -16,6 +16,7 @@ export const CharacterStats = (props: CharacterStatsProps) => {
         formState: { isSubmitting }
     } = useForm();
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function onSubmit(values: any) {
         return new Promise<void>((resolve) => {
             props.setBuild(values as TargetBuild);
