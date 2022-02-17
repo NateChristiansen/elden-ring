@@ -43,7 +43,7 @@ export const CharacterPlanner = () => {
                 result = result.concat(generateAllBuilds(clazz, targetBuild));
             }
         }
-        setBuilds(getBuildTable(result, classNames));
+        setBuilds(getBuildTable(result));
     }, [targetBuild]);
 
     return (
