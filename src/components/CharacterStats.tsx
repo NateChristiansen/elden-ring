@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Button, FormControl, FormErrorMessage, FormLabel, Input, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Stack, Switch } from '@chakra-ui/react';
-import { useEffect } from 'react';
+import { Box, Button, FormControl, FormLabel, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Stack, Switch } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { MAX_CHAR_LEVEL, MAX_STAT_LEVEL, MIN_CHAR_LEVEL, MIN_STAT_LEVEL } from '../constants/constants';
 import { TargetBuild, Stats } from '../types/character';
@@ -14,7 +13,7 @@ export const CharacterStats = (props: CharacterStatsProps) => {
     const {
         handleSubmit,
         register,
-        formState: { errors, isSubmitting }
+        formState: { isSubmitting }
     } = useForm();
 
     function onSubmit(values: any) {

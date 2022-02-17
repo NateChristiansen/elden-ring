@@ -20,7 +20,7 @@ function getOrDefaultBuildData(buildRows: Map<string, BuildData>, key: string): 
     } as BuildData;
 }
 
-export function getBuildTable(builds: CharacterBuild[], classes: string[]): BuildTypeRow[] {
+export function getBuildTable(builds: CharacterBuild[]): BuildTypeRow[] {
     builds.sort((a, b) => {
         if (a.buildType.secondaryStat && b.buildType.secondaryStat) {
             if (a.buildType.primaryStat.localeCompare(b.buildType.primaryStat)) {
