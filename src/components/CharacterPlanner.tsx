@@ -48,8 +48,11 @@ export const CharacterPlanner = () => {
 
     return (
         <Box>
-            <CharacterStats build={targetBuild} setBuild={setTargetBuild} />
-            <BuildTable builds={builds} classes={classNames} />
+            <Box>
+                <CharacterStats build={targetBuild} setBuild={setTargetBuild} /></Box>
+            <Box>
+                <BuildTable builds={builds} classes={classNames} />
+            </Box>
         </Box>
     );
 };

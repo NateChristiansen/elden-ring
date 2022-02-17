@@ -102,7 +102,7 @@ export const BuildTable = (props: BuildTableProps) => {
     }, [props.builds]);
 
     return (
-        <Box sx={{ maxWidth: '50rem', overflowX: 'scroll' }}>
+        <Box sx={{ overflowX: 'scroll' }}>
             <BuildTableComponent
                 title={minLevelTable.title}
                 builds={minLevelTable.builds}

@@ -26,7 +26,7 @@ export const CharacterStats = (props: CharacterStatsProps) => {
 
     const statField = (defaultValue: number, min: number, max: number, id: string, text: string) => {
         return (
-            <Box key={`${id}-form`} sx={{ padding: '.5em', maxWidth: '50rem' }}>
+            <Box key={`${id}-form`} sx={{ padding: '.5em' }}>
                 <FormLabel htmlFor={`${id}-form`}>{text}</FormLabel>
                 <NumberInput
                     id={`${id}-form`}
@@ -65,7 +65,7 @@ export const CharacterStats = (props: CharacterStatsProps) => {
 
     return (
         <Box>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <Box as='form' onSubmit={handleSubmit(onSubmit)}>
                 <FormControl>
                     {statField(150, MIN_CHAR_LEVEL, MAX_CHAR_LEVEL, 'targetLevel', 'Target Level')}
                     {statField(40, MIN_STAT_LEVEL, MAX_STAT_LEVEL, `targetStats.${Stats.Vigor}`, 'Minimum Vigor')}
@@ -91,7 +91,7 @@ export const CharacterStats = (props: CharacterStatsProps) => {
                 <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
                     Submit
                 </Button>
-            </form>
+            </Box>
         </Box>
     );
 };
