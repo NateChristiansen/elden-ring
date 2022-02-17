@@ -17,7 +17,8 @@ interface BuildTableComponentProps {
 interface BuildRowProps {
     build: BuildTypeRow,
     field: string,
-    classes: string[]
+    classes: string[],
+    key: string,
 }
 
 function getTableData(props: BuildRowProps, startingClass: string) {
@@ -27,7 +28,7 @@ function getTableData(props: BuildRowProps, startingClass: string) {
 
 export const BuildRow = (props: BuildRowProps) => {
     return (
-        <Tr>
+        <Tr key={props.key}>
             <Td>{props.build.buildType}</Td>
             {props.classes.map(startingClass =>
                 <Td key={`${props.build.buildType}${startingClass}`}>

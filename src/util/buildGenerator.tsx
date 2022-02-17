@@ -10,7 +10,7 @@ export function getBuildTypeString(buildType: BuildType): string {
 
 function getOrDefaultBuildData(buildRows: Map<string, BuildData>, key: string): BuildData {
     const row = buildRows.get(key);
-    if (row && row != undefined) {
+    if (row && row !== undefined) {
         return row;
     }
     return {
