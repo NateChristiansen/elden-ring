@@ -1,5 +1,5 @@
 import { TargetBuild, StartingClass, CharacterBuild, BuildTypeRow } from '../types/character';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { generateAllBuilds, getBuildTable } from '../util/buildGenerator';
 import { CharacterStats } from './CharacterStats';
 import { Box } from '@chakra-ui/react';
