@@ -1,6 +1,6 @@
-import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Tfoot, Box } from '@chakra-ui/react';
+import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { BuildType, BuildTypeRow, CharacterBuild } from '../types/character';
+import { BuildTypeRow } from '../types/character';
 
 export interface BuildTableProps {
     builds: BuildTypeRow[],
@@ -43,7 +43,7 @@ export const BuildTableComponent = (props: BuildTableComponentProps) => {
 
     return (
 
-        <Table variant='simple'>
+        <Table variant='simple' size={'sm'}>
             <TableCaption placement='top'>{props.title}</TableCaption>
             <Thead>
                 <Tr>
@@ -102,7 +102,7 @@ export const BuildTable = (props: BuildTableProps) => {
     }, [props.builds]);
 
     return (
-        <Box>
+        <Box sx={{ maxWidth: '50rem', overflowX: 'scroll' }}>
             <BuildTableComponent
                 title={minLevelTable.title}
                 builds={minLevelTable.builds}

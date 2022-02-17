@@ -1,7 +1,6 @@
-import React from 'react';
-import { TargetBuild, StartingClass, Stats, CharacterBuild, BuildTypeRow } from '../types/character';
+import { TargetBuild, StartingClass, CharacterBuild, BuildTypeRow } from '../types/character';
 import { useEffect, useState } from 'react';
-import { generateAllBuilds, generateBuild, getBuildTable } from '../util/buildGenerator';
+import { generateAllBuilds, getBuildTable } from '../util/buildGenerator';
 import { CharacterStats } from './CharacterStats';
 import { Box } from '@chakra-ui/react';
 
@@ -48,7 +47,7 @@ export const CharacterPlanner = () => {
     }, [targetBuild]);
 
     return (
-        <Box>
+        <Box width={[1, 1 / 2, 1 / 4]}>
             <CharacterStats build={targetBuild} setBuild={setTargetBuild} />
             <BuildTable builds={builds} classes={classNames} />
         </Box>
