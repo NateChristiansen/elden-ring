@@ -2,7 +2,7 @@ import { TargetBuild } from '../types/Builds';
 import { useEffect, useState } from 'react';
 import { getBuildComparisonForTargetBuild } from '../util/buildGen/buildGenerator';
 import { CharacterStats } from './stats/CharacterStats';
-import { Box, Container } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 
 import { BuildComparisonTable } from './tables/BuildTable';
@@ -22,12 +22,8 @@ export const CharacterPlanner = () => {
 
     return (
         <Box>
-            <Container display={'flex'}>
-                <CharacterStats build={targetBuild} setBuild={setTargetBuild} />
-            </Container>
-            <Container display={'flex'}>
-                <BuildComparisonTable builds={builds} />
-            </Container>
+            <CharacterStats build={targetBuild} setBuild={setTargetBuild} />
+            <BuildComparisonTable builds={builds} />
         </Box>
     );
 };
