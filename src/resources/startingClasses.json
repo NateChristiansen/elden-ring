@@ -1,142 +1,142 @@
 {
     "hero": {
-            "name": "Hero",
-            "startingLevel": 7,
-            "startingStats": {
-                "vigor": 14,
-                "mind": 9,
-                "endurance": 12,
-                "strength": 16,
-                "dexterity": 9,
-                "intelligence": 7,
-                "faith": 8,
-                "arcane": 11
-            }
-        },
-        "bandit": {
-            "name": "Bandit",
-            "startingLevel": 5,
-            "startingStats": {
-                "vigor": 10,
-                "mind": 11,
-                "endurance": 10,
-                "strength": 9,
-                "dexterity": 13,
-                "intelligence": 9,
-                "faith": 8,
-                "arcane": 14
-            }
-        },
-        "astrologer": {
-            "name": "Astrologer",
-            "startingLevel": 6,
-            "startingStats": {
-                "vigor": 9,
-                "mind": 15,
-                "endurance": 9,
-                "strength": 8,
-                "dexterity": 12,
-                "intelligence": 16,
-                "faith": 7,
-                "arcane": 9
-            }
-        },
-        "warrior": {
-            "name": "Warrior",
-            "startingLevel": 8,
-            "startingStats": {
-                "vigor": 11,
-                "mind": 12,
-                "endurance": 11,
-                "strength": 10,
-                "dexterity": 16,
-                "intelligence": 10,
-                "faith": 8,
-                "arcane": 9
-            }
-        },
-        "vagabond": {
-            "name": "Vagabond",
-            "startingLevel": 9,
-            "startingStats": {
-                "vigor": 15,
-                "mind": 10,
-                "endurance": 11,
-                "strength": 14,
-                "dexterity": 13,
-                "intelligence": 9,
-                "faith": 9,
-                "arcane": 7
-            }
-        },
-        "prisoner": {
-            "name": "Prisoner",
-            "startingLevel": 9,
-            "startingStats": {
-                "vigor": 11,
-                "mind": 12,
-                "endurance": 11,
-                "strength": 11,
-                "dexterity": 14,
-                "intelligence": 14,
-                "faith": 6,
-                "arcane": 9
-            }
-        },
-        "confessor": {
-            "name": "Confessor",
-            "startingLevel": 10,
-            "startingStats": {
-                "vigor": 10,
-                "mind": 13,
-                "endurance": 10,
-                "strength": 12,
-                "dexterity": 12,
-                "intelligence": 9,
-                "faith": 14,
-                "arcane": 9
-            }
-        },
-        "samurai": {
-            "name": "Samurai",
-            "startingLevel": 9,
-            "startingStats": {
-                "vigor": 12,
-                "mind": 11,
-                "endurance": 13,
-                "strength": 12,
-                "dexterity": 15,
-                "intelligence": 9,
-                "faith": 8,
-                "arcane": 8
-            }
-        },
-        "wretch": {
-            "name": "Wretch",
-            "startingLevel": 10,
-            "startingStats": {
-                "vigor": 10,
-                "mind": 10,
-                "endurance": 10,
-                "strength": 10,
-                "dexterity": 10,
-                "intelligence": 10,
-                "faith": 10,
-                "arcane": 10
-            }
-        },
-        "prophet": {
-            "name": "Prophet",
-            "startingLevel": 7,
-            "startingStats": {
-                "vigor": 10,
-                "mind": 14,
-                "endurance": 8,
-                "strength": 12,
-                "dexterity": 8,
-                "intelligence": 7,
-                "faith": 16,
-                "arcane": 11
-            }
+        "name": "hero",
+        "startingLevel": 7,
+        "startingStats": {
+            "vigor": 14,
+            "mind": 9,
+            "endurance": 12,
+            "strength": 16,
+            "dexterity": 9,
+            "intelligence": 7,
+            "faith": 8,
+            "arcane": 11
+        }
+    },
+    "bandit": {
+        "name": "bandit",
+        "startingLevel": 5,
+        "startingStats": {
+            "vigor": 10,
+            "mind": 11,
+            "endurance": 10,
+            "strength": 9,
+            "dexterity": 13,
+            "intelligence": 9,
+            "faith": 8,
+            "arcane": 14
+        }
+    },
+    "astrologer": {
+        "name": "astrologer",
+        "startingLevel": 6,
+        "startingStats": {
+            "vigor": 9,
+            "mind": 15,
+            "endurance": 9,
+            "strength": 8,
+            "dexterity": 12,
+            "intelligence": 16,
+            "faith": 7,
+            "arcane": 9
+        }
+    },
+    "warrior": {
+        "name": "warrior",
+        "startingLevel": 8,
+        "startingStats": {
+            "vigor": 11,
+            "mind": 12,
+            "endurance": 11,
+            "strength": 10,
+            "dexterity": 16,
+            "intelligence": 10,
+            "faith": 8,
+            "arcane": 9
+        }
+    },
+    "vagabond": {
+        "name": "vagabond",
+        "startingLevel": 9,
+        "startingStats": {
+            "vigor": 15,
+            "mind": 10,
+            "endurance": 11,
+            "strength": 14,
+            "dexterity": 13,
+            "intelligence": 9,
+            "faith": 9,
+            "arcane": 7
+        }
+    },
+    "prisoner": {
+        "name": "prisoner",
+        "startingLevel": 9,
+        "startingStats": {
+            "vigor": 11,
+            "mind": 12,
+            "endurance": 11,
+            "strength": 11,
+            "dexterity": 14,
+            "intelligence": 14,
+            "faith": 6,
+            "arcane": 9
+        }
+    },
+    "confessor": {
+        "name": "confessor",
+        "startingLevel": 10,
+        "startingStats": {
+            "vigor": 10,
+            "mind": 13,
+            "endurance": 10,
+            "strength": 12,
+            "dexterity": 12,
+            "intelligence": 9,
+            "faith": 14,
+            "arcane": 9
+        }
+    },
+    "samurai": {
+        "name": "samurai",
+        "startingLevel": 9,
+        "startingStats": {
+            "vigor": 12,
+            "mind": 11,
+            "endurance": 13,
+            "strength": 12,
+            "dexterity": 15,
+            "intelligence": 9,
+            "faith": 8,
+            "arcane": 8
+        }
+    },
+    "wretch": {
+        "name": "wretch",
+        "startingLevel": 10,
+        "startingStats": {
+            "vigor": 10,
+            "mind": 10,
+            "endurance": 10,
+            "strength": 10,
+            "dexterity": 10,
+            "intelligence": 10,
+            "faith": 10,
+            "arcane": 10
+        }
+    },
+    "prophet": {
+        "name": "prophet",
+        "startingLevel": 7,
+        "startingStats": {
+            "vigor": 10,
+            "mind": 14,
+            "endurance": 8,
+            "strength": 12,
+            "dexterity": 8,
+            "intelligence": 7,
+            "faith": 16,
+            "arcane": 11
         }
     }
+}

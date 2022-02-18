@@ -1,49 +1,23 @@
-import { TargetBuild, StartingClass, CharacterBuild, BuildTypeRow } from '../types/character';
-import React, { useEffect, useState } from 'react';
-import { generateAllBuilds, getBuildTable } from '../util/buildGenerator';
-import { CharacterStats } from './CharacterStats';
+import { TargetBuild } from '../types/Builds';
+import { useEffect, useState } from 'react';
+import { getBuildComparisonForTargetBuild } from '../util/buildGen/buildGenerator';
+import { CharacterStats } from './stats/CharacterStats';
 import { Box } from '@chakra-ui/react';
+import React from 'react';
 
-import startingClasses from '../resources/startingClasses.json';
-import { BuildTable } from './BuildTable';
+import { BuildComparisonTable } from './tables/BuildTable';
+import { BuildComparison } from '../types/BuildComparison';
 
 export const CharacterPlanner = () => {
     const [targetBuild, setTargetBuild] = useState({} as TargetBuild);
-    const [builds, setBuilds] = useState([] as BuildTypeRow[]);
-
-    const [classes] = useState(() => {
-        return new Map<string, StartingClass>([
-            ['hero', startingClasses.hero],
-            ['bandit', startingClasses.bandit],
-            ['astrologer', startingClasses.astrologer],
-            ['warrior', startingClasses.warrior],
-            ['prisoner', startingClasses.prisoner],
-            ['confessor', startingClasses.confessor],
-            ['wretch', startingClasses.wretch],
-            ['vagabond', startingClasses.vagabond],
-        ]);
-    });
-
-    const [classNames, setClassNames] = useState([] as string[]);
-
-    useEffect(() => {
-        const names = [] as string[];
-        classes.forEach(c => names.push(c.name.toLowerCase()));
-        setClassNames(names);
-    }, [classes]);
+    const [builds, setBuilds] = useState({} as BuildComparison);
 
     useEffect(() => {
         if (!Object.entries(targetBuild).length) {
             return;
         }
-        let result = [] as CharacterBuild[];
-        for (const name in classNames) {
-            const clazz = classes.get(classNames[name]);
-            if (clazz) {
-                result = result.concat(generateAllBuilds(clazz, targetBuild));
-            }
-        }
-        setBuilds(getBuildTable(result));
+
+        setBuilds(getBuildComparisonForTargetBuild(targetBuild));
     }, [targetBuild]);
 
     return (
@@ -51,7 +25,7 @@ export const CharacterPlanner = () => {
             <Box>
                 <CharacterStats build={targetBuild} setBuild={setTargetBuild} /></Box>
             <Box>
-                <BuildTable builds={builds} classes={classNames} />
+                <BuildComparisonTable builds={builds} />
             </Box>
         </Box>
     );
