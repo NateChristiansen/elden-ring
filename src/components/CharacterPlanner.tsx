@@ -22,10 +22,10 @@ export const CharacterPlanner = () => {
 
     return (
         <Box>
-            <Container>
+            <Container display={'flex'}>
                 <CharacterStats build={targetBuild} setBuild={setTargetBuild} />
             </Container>
-            <Container>
+            <Container display={'flex'}>
                 <BuildComparisonTable builds={builds} />
             </Container>
         </Box>
