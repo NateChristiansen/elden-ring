@@ -112,8 +112,8 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
         if (!builds?.builds) return <Box></Box>;
 
         return (
-            <Container>
-                <Box overflowX={'auto'}>
+            <Center>
+                <Box overflowX={'auto'} maxWidth={[null, null, '60rem']}>
                     <Table variant='simple' size={'sm'}>
                         <TableCaption placement='top'>{title}</TableCaption>
                         <Thead>
@@ -130,7 +130,7 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
                         </Tfoot>
                     </Table>
                 </Box>
-            </Container>
+            </Center>
         );
     };
 
