@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box, useDisclosure, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Center, Tfoot } from '@chakra-ui/react';
+import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box, useDisclosure, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Center, Tfoot, Container } from '@chakra-ui/react';
 import { BuildComparison } from '../../types/BuildComparison';
 import { Build } from '../../types/Builds';
 import { getFlexStats, getMinLevel, getWastedStats } from '../../util/buildUtil';
@@ -112,23 +112,25 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
         if (!builds?.builds) return <Box></Box>;
 
         return (
-            <Box overflowX={'auto'}>
-                <Table variant='simple' size={'sm'}>
-                    <TableCaption placement='top'>{title}</TableCaption>
-                    <Thead>
-                        <Tr>
-                            <Th>Buildtype</Th>
-                            {builds.keyOrder.map(className => <Th key={`${className}-${name}-header`}>{className}</Th>)}
-                        </Tr>
-                    </Thead>
-                    <Tbody>
-                        {builds.buildOrder?.map(buildType => <BuildRow key={`${buildType}-${name}-data`} builds={builds} buildType={buildType} mapping={mapping} />)}
-                    </Tbody>
-                    <Tfoot>
-                        <AvgRow builds={builds} mapping={mapping} name={name} />
-                    </Tfoot>
-                </Table>
-            </Box>
+            <Center>
+                <Box overflowX={'auto'} maxWidth={[null, null, '60rem']}>
+                    <Table variant='simple' size={'sm'}>
+                        <TableCaption placement='top'>{title}</TableCaption>
+                        <Thead>
+                            <Tr>
+                                <Th>Buildtype</Th>
+                                {builds.keyOrder.map(className => <Th key={`${className}-${name}-header`}>{className}</Th>)}
+                            </Tr>
+                        </Thead>
+                        <Tbody>
+                            {builds.buildOrder?.map(buildType => <BuildRow key={`${buildType}-${name}-data`} builds={builds} buildType={buildType} mapping={mapping} />)}
+                        </Tbody>
+                        <Tfoot>
+                            <AvgRow builds={builds} mapping={mapping} name={name} />
+                        </Tfoot>
+                    </Table>
+                </Box>
+            </Center>
         );
     };
 
