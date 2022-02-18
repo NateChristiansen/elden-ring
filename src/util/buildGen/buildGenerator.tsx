@@ -98,7 +98,7 @@ function getStatLevel(build: Build, stat: Stats, buildType: Archtype): number {
 
 function getBuildStatLevel(targetStat: number, defaultStat: number, damageStatTarget: number, isArchtype: boolean) {
     if (isArchtype) {
-        return Math.max(damageStatTarget, defaultStat);
+        return Math.max(Math.max(targetStat, damageStatTarget), defaultStat);
     }
     return Math.max(targetStat, defaultStat);
 }

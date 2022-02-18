@@ -8,16 +8,18 @@ import {
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { CharacterPlanner } from './components/CharacterPlanner';
+import { ColorModeScript } from '@chakra-ui/react';
 
 export const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode='system' />
       <Box>
         <Flex justifyContent='flex-end'>
-          <ColorModeSwitcher/>
+          <ColorModeSwitcher />
         </Flex>
-          <CharacterPlanner />
+        <CharacterPlanner />
       </Box>
     </ChakraProvider>
   );

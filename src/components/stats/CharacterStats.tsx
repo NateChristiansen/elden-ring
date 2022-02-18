@@ -74,9 +74,6 @@ export const CharacterStats = (props: CharacterStatsProps) => {
                 {statField(0, MIN_STAT_LEVEL, MAX_STAT_LEVEL, `targetStats.${Stats.Intelligence}`, 'Minimum Intelligence')}
                 {statField(0, MIN_STAT_LEVEL, MAX_STAT_LEVEL, `targetStats.${Stats.Faith}`, 'Minimum Faith')}
                 {statField(0, MIN_STAT_LEVEL, MAX_STAT_LEVEL, `targetStats.${Stats.Arcane}`, 'Minimum Arcane')}
-                {statField(40, MIN_STAT_LEVEL, MAX_STAT_LEVEL, 'damageStatTarget', 'Target Damage Stat')}
-            </FormControl>
-            <FormControl>
                 <FormLabel>Toggle Damage Stats</FormLabel>
                 <Stack direction={['column', 'row']}>
                     {toggleDamageStat(Stats.Strength)}
@@ -85,8 +82,9 @@ export const CharacterStats = (props: CharacterStatsProps) => {
                     {toggleDamageStat(Stats.Faith)}
                     {toggleDamageStat(Stats.Arcane)}
                 </Stack>
+                {statField(40, MIN_STAT_LEVEL, MAX_STAT_LEVEL, 'damageStatTarget', 'Target Damage Stat')}
             </FormControl>
-            <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
+            <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit' mb={4}>
                 Submit
             </Button>
         </Container>

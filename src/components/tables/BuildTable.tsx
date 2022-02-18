@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box, useDisclosure, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Center, Tfoot } from '@chakra-ui/react';
+import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box, useDisclosure, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Center, Tfoot, Flex } from '@chakra-ui/react';
 import { BuildComparison } from '../../types/BuildComparison';
 import { Build } from '../../types/Builds';
 import { getFlexStats, getMinLevel, getWastedStats } from '../../util/buildUtil';
@@ -93,13 +93,13 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
 
         return (
             <Tr>
-                <Td>Average</Td>
+                <Th>Average</Th>
                 {builds.keyOrder.map(className => {
-                    return <Td key={`${className}-${name}-avg`}>
+                    return <Th key={`${className}-${name}-avg`}>
                         <Center>
                             {getAverage(className).toFixed(2)}
                         </Center>
-                    </Td>;
+                    </Th>;
                 })}
             </Tr>
         );
@@ -113,7 +113,7 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
 
         return (
             <Center>
-                <Box overflowX={'auto'} maxWidth={[null, null, '60rem']}>
+                <Flex overflowX={['auto']} mb={4} padding={4}>
                     <Table variant='simple' size={'sm'}>
                         <TableCaption placement='top'>{title}</TableCaption>
                         <Thead>
@@ -129,7 +129,7 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
                             <AvgRow builds={builds} mapping={mapping} name={name} />
                         </Tfoot>
                     </Table>
-                </Box>
+                </Flex>
             </Center>
         );
     };
