@@ -1,4 +1,4 @@
-import { Button, Container, Flex, FormLabel, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Stack, Stat, StatHelpText, StatLabel, StatNumber, Tag } from '@chakra-ui/react';
+import { Button, Container, Flex, FormLabel, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Stat, StatHelpText, StatLabel, StatNumber, Tag } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { MAX_CHAR_LEVEL, MAX_STAT_LEVEL } from '../../constants/constants';
 import { Build, StartingClass, TargetBuild } from '../../types/Builds';
@@ -26,23 +26,21 @@ export const BuildInfo = (props: BuildInfoProps) => {
 
     return (
         <Container>
-            <Stack direction={['column', 'row']}>
-                <Stat>
-                    <StatLabel>Starting Class</StatLabel>
-                    <StatNumber>{build.startingClass.name}</StatNumber>
-                    <StatHelpText>Build Type<Tag>{build.buildType.text}</Tag></StatHelpText>
-                </Stat>
+            <Stat>
+                <StatLabel>Starting Class</StatLabel>
+                <StatNumber>{build.startingClass.name}</StatNumber>
+                <StatHelpText>Build Type<Tag>{build.buildType.text}</Tag></StatHelpText>
+            </Stat>
 
-                <Stat>
-                    <StatLabel>Level</StatLabel>
-                    <StatNumber>{getMinLevel(build)}</StatNumber>
-                </Stat>
+            <Stat>
+                <StatLabel>Level</StatLabel>
+                <StatNumber>{getMinLevel(build)}</StatNumber>
+            </Stat>
 
-                <Stat>
-                    <StatLabel>Flex Stats</StatLabel>
-                    <StatNumber>{getFlexStats(build)}</StatNumber>
-                </Stat>
-            </Stack>
+            <Stat>
+                <StatLabel>Flex Stats</StatLabel>
+                <StatNumber>{getFlexStats(build)}</StatNumber>
+            </Stat>
         </Container>
     );
 };
@@ -73,86 +71,90 @@ export const BuildStats = (props: BuildStatsProps) => {
 
     return (
         <Container>
-            <Stack>
-                {statField(targetBuild.targetLevel, startingClass.startingLevel, MAX_CHAR_LEVEL, 'level', 'Target Level', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetLevel: val
-                    });
-                })}
-                {statField(targetBuild.targetStats.vigor, startingClass.startingStats.vigor, MAX_STAT_LEVEL, 'vigor', 'Vigor', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetStats: {
-                            ...targetBuild.targetStats,
-                            vigor: val
-                        }
-                    });
-                })}
-                {statField(targetBuild.targetStats.mind, startingClass.startingStats.mind, MAX_STAT_LEVEL, 'mind', 'Mind', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetStats: {
-                            ...targetBuild.targetStats,
-                            mind: val
-                        }
-                    });
-                })}
-                {statField(targetBuild.targetStats.endurance, startingClass.startingStats.endurance, MAX_STAT_LEVEL, 'endurance', 'Endurance', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetStats: {
-                            ...targetBuild.targetStats,
-                            endurance: val
-                        }
-                    });
-                })}
-                {statField(targetBuild.targetStats.strength, startingClass.startingStats.strength, MAX_STAT_LEVEL, 'strength', 'Strength', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetStats: {
-                            ...targetBuild.targetStats,
-                            strength: val
-                        }
-                    });
-                })}
-                {statField(targetBuild.targetStats.dexterity, startingClass.startingStats.dexterity, MAX_STAT_LEVEL, 'dexterity', 'Dexterity', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetStats: {
-                            ...targetBuild.targetStats,
-                            dexterity: val
-                        }
-                    });
-                })}
-                {statField(targetBuild.targetStats.intelligence, startingClass.startingStats.intelligence, MAX_STAT_LEVEL, 'intelligence', 'Intelligence', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetStats: {
-                            ...targetBuild.targetStats,
-                            intelligence: val
-                        }
-                    });
-                })}
-                {statField(targetBuild.targetStats.faith, startingClass.startingStats.faith, MAX_STAT_LEVEL, 'faith', 'Faith', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetStats: {
-                            ...targetBuild.targetStats,
-                            faith: val
-                        }
-                    });
-                })}
-                {statField(targetBuild.targetStats.vigor, startingClass.startingStats.arcane, MAX_STAT_LEVEL, 'arcane', 'Arcane', (_str, val) => {
-                    setTargetBuild({
-                        ...targetBuild,
-                        targetStats: {
-                            ...targetBuild.targetStats,
-                            arcane: val
-                        }
-                    });
-                })}
-            </Stack>
+            <Flex direction={['column', 'row']}>
+                <Flex direction={'column'}>
+                    {statField(targetBuild.targetLevel, startingClass.startingLevel, MAX_CHAR_LEVEL, 'level', 'Target Level', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetLevel: val
+                        });
+                    })}
+                    {statField(targetBuild.targetStats.vigor, startingClass.startingStats.vigor, MAX_STAT_LEVEL, 'vigor', 'Vigor', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetStats: {
+                                ...targetBuild.targetStats,
+                                vigor: val
+                            }
+                        });
+                    })}
+                    {statField(targetBuild.targetStats.mind, startingClass.startingStats.mind, MAX_STAT_LEVEL, 'mind', 'Mind', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetStats: {
+                                ...targetBuild.targetStats,
+                                mind: val
+                            }
+                        });
+                    })}
+                    {statField(targetBuild.targetStats.endurance, startingClass.startingStats.endurance, MAX_STAT_LEVEL, 'endurance', 'Endurance', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetStats: {
+                                ...targetBuild.targetStats,
+                                endurance: val
+                            }
+                        });
+                    })}
+                </Flex>
+                <Flex direction={'column'}>
+                    {statField(targetBuild.targetStats.strength, startingClass.startingStats.strength, MAX_STAT_LEVEL, 'strength', 'Strength', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetStats: {
+                                ...targetBuild.targetStats,
+                                strength: val
+                            }
+                        });
+                    })}
+                    {statField(targetBuild.targetStats.dexterity, startingClass.startingStats.dexterity, MAX_STAT_LEVEL, 'dexterity', 'Dexterity', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetStats: {
+                                ...targetBuild.targetStats,
+                                dexterity: val
+                            }
+                        });
+                    })}
+                    {statField(targetBuild.targetStats.intelligence, startingClass.startingStats.intelligence, MAX_STAT_LEVEL, 'intelligence', 'Intelligence', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetStats: {
+                                ...targetBuild.targetStats,
+                                intelligence: val
+                            }
+                        });
+                    })}
+                    {statField(targetBuild.targetStats.faith, startingClass.startingStats.faith, MAX_STAT_LEVEL, 'faith', 'Faith', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetStats: {
+                                ...targetBuild.targetStats,
+                                faith: val
+                            }
+                        });
+                    })}
+                    {statField(targetBuild.targetStats.vigor, startingClass.startingStats.arcane, MAX_STAT_LEVEL, 'arcane', 'Arcane', (_str, val) => {
+                        setTargetBuild({
+                            ...targetBuild,
+                            targetStats: {
+                                ...targetBuild.targetStats,
+                                arcane: val
+                            }
+                        });
+                    })}
+                </Flex>
+            </Flex>
         </Container>
     );
 };
@@ -187,7 +189,7 @@ export const BuildViewer = (props: BuildViewerProps) => {
 
     return (
         <Flex>
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} onClose={onClose} size={'xl'}>
                 <ModalOverlay />
                 <ModalContent>
                     <ModalHeader>{'Build Viewer'}</ModalHeader>
