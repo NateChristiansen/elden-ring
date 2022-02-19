@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box, useDisclosure, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Center, Tfoot, Flex } from '@chakra-ui/react';
+import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box, useDisclosure, Button, Center, Tfoot, Flex } from '@chakra-ui/react';
 import { BuildComparison } from '../../types/BuildComparison';
 import { Build } from '../../types/Builds';
 import { getFlexStats, getMinLevel, getWastedStats } from '../../util/buildUtil';
+import { BuildViewer } from '../builds/BuildViewer';
 
 export interface BuildComparisonTableProps {
     builds: BuildComparison
@@ -39,6 +40,11 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
         if (!modalBuild) return;
         onOpen();
     }, [modalBuild]);
+
+    const onModalClose = () => {
+        setModalBuild(undefined);
+        onClose();
+    };
 
     const BuildRow = (props: BuildRowProps) => {
 
@@ -134,14 +140,6 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
         );
     };
 
-    const BuildModal = () => {
-        return (
-            <Box>
-                <Text>coming soon 😈</Text>
-            </Box>
-        );
-    };
-
     return (
         <Box>
             <BuildTable
@@ -162,22 +160,7 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
                 builds={builds}
                 mapping={build => getWastedStats(build)}
             />
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>{`Build type: ${modalBuild?.buildType.text}, Starting Class ${modalBuild?.startingClass.name}`}</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        <BuildModal />
-                    </ModalBody>
-
-                    <ModalFooter>
-                        <Button colorScheme='blue' mr={3} onClick={onClose}>
-                            Close
-                        </Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
+            <BuildViewer build={modalBuild} isOpen={isOpen} onClose={onModalClose} />
         </Box>
     );
 };
