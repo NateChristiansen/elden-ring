@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box, useDisclosure, Button, Center, Tfoot, Flex } from '@chakra-ui/react';
+import React from 'react';
+import { Table, TableCaption, Thead, Tr, Th, Tbody, Td, Box, Button, Center, Tfoot, Flex } from '@chakra-ui/react';
 import { BuildComparison } from '../../types/BuildComparison';
 import { Build } from '../../types/Builds';
 import { getFlexStats, getMinLevel, getWastedStats } from '../../util/buildUtil';
-import { BuildViewer } from '../builds/BuildViewer';
 
 export interface BuildComparisonTableProps {
-    builds: BuildComparison
+    builds: BuildComparison;
+    onModalOpen: (build: Build) => void;
 }
 
 interface BuildTableProps {
@@ -30,21 +30,7 @@ interface AvgRowProps {
 
 export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
 
-    const { builds } = props;
-
-    const { isOpen, onOpen, onClose } = useDisclosure();
-
-    const [modalBuild, setModalBuild] = useState<Build>();
-
-    useEffect(() => {
-        if (!modalBuild) return;
-        onOpen();
-    }, [modalBuild]);
-
-    const onModalClose = () => {
-        setModalBuild(undefined);
-        onClose();
-    };
+    const { builds, onModalOpen: setModalBuild } = props;
 
     const BuildRow = (props: BuildRowProps) => {
 
@@ -120,7 +106,7 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
         return (
             <Center>
                 <Flex overflowX={['auto']} mb={4} padding={4}>
-                    <Table variant='simple' size={'sm'}>
+                    <Table variant='striped' size={'sm'}>
                         <TableCaption placement='top'>{title}</TableCaption>
                         <Thead>
                             <Tr>
@@ -160,7 +146,6 @@ export const BuildComparisonTable = (props: BuildComparisonTableProps) => {
                 builds={builds}
                 mapping={build => getWastedStats(build)}
             />
-            <BuildViewer build={modalBuild} isOpen={isOpen} onClose={onModalClose} />
         </Box>
     );
 };

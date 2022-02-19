@@ -68,7 +68,7 @@ function addToBuildMap(build: Build, builds: Map<string, Map<string, Build>>): v
     builds.get(build.buildType.text)?.set(build.startingClass.name, build);
 }
 
-export function generateBuild(startingClass: StartingClass, targetBuild: TargetBuild, buildType: Archtype,): Build {
+export function generateBuild(startingClass: StartingClass, targetBuild: TargetBuild, buildType: Archtype): Build {
     const build = {} as Build;
     build.startingClass = startingClass;
     build.targetBuild = targetBuild;
