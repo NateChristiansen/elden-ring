@@ -144,7 +144,7 @@ export const BuildStats = (props: BuildStatsProps) => {
                             }
                         });
                     })}
-                    {statField(targetBuild.targetStats.vigor, startingClass.startingStats.arcane, MAX_STAT_LEVEL, 'arcane', 'Arcane', (_str, val) => {
+                    {statField(targetBuild.targetStats.arcane, startingClass.startingStats.arcane, MAX_STAT_LEVEL, 'arcane', 'Arcane', (_str, val) => {
                         setTargetBuild({
                             ...targetBuild,
                             targetStats: {
