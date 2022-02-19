@@ -1,9 +1,9 @@
 import { Button, Container, Flex, FormLabel, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Stack, Stat, StatHelpText, StatLabel, StatNumber, Tag } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { MAX_CHAR_LEVEL, MAX_STAT_LEVEL, MIN_CHAR_LEVEL, MIN_STAT_LEVEL } from '../../constants/constants';
+import { MAX_CHAR_LEVEL, MAX_STAT_LEVEL } from '../../constants/constants';
 import { Build, StartingClass, TargetBuild } from '../../types/Builds';
 import { generateBuild } from '../../util/buildGen/buildGenerator';
-import { getFlexStats, getMinLevel, getWastedStats } from '../../util/buildUtil';
+import { getFlexStats, getMinLevel } from '../../util/buildUtil';
 
 export interface BuildViewerProps {
     build: Build | undefined;
